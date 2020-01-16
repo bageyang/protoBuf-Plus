@@ -1,0 +1,44 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>ProtoBuf-Plus</name>
+  <version>1.0</version>
+  <vendor email="1960349130@qq.com" url="https://github.com/bageyang/protoBuf-Plus">bageyang</vendor>
+
+  <description>
+    Simple conversion of .proto files to java classes via protocol buffer compiler
+    </description>
+
+  <change-notes><![CDATA[
+    <h3>1.0</h3>
+		<ul>
+			<li>Supports specifying the relative path and directory name of the generated file</li>
+			<li>Check whether the package name has been filled in the .proto file</li>
+			<li>Ability to specify protocol buffer compiler location</li>
+	</ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable groupId="tools" displayName="ProtoBuf Compiler"  id="ProtoBuf-Plus.settings" instance="Settings"/>
+    <applicationService serviceInterface="ProtoBufConfig" serviceImplementation="ProtoBufConfig"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="ProtoBuf-Plus.GeneratorAction" class="GeneratorAction" text="GeneratorAction"
+            description="this action is group in generator">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="TAB"/>
+    </action>
+  </actions>
+
+</idea-plugin>
