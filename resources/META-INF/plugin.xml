@@ -34,10 +34,10 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="ProtoBuf-Plus.GeneratorAction" class="GeneratorAction" text="GeneratorAction"
+    <action id="ProtoBuf-Plus.GeneratorAction" class="GeneratorAction" text="ProtoCompile"
             description="this action is group in generator">
       <add-to-group group-id="GenerateGroup" anchor="first"/>
-      <keyboard-shortcut keymap="$default" first-keystroke="TAB"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="control shift c"/>
     </action>
   </actions>
 
